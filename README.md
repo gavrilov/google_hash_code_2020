@@ -1,6 +1,6 @@
 # Google Hash Code 2020 - more pizza :pizza:
 ## Problem description
-![Philadelphia's Magic Gardens. This place was so cool!](pizza_types.png "Philadelphia's Magic Gardens")
+![Different pizza types!](pizza_types.png "Do you like pizza?")
 You are organizing a Hash Code hub and want to order pizza for your hub’s participants. Luckily, there is a nearby pizzeria with really good pizza.  
 The pizzeria has different types of pizza, and to keep the food offering for your hub interesting, you can only order **at most one pizza of each type**.  
 Fortunately, there are many types of pizza to choose from! Each type of pizza has a specified size: the size is the number of slices in a pizza of this type.  
