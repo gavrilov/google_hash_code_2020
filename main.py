@@ -13,7 +13,31 @@ def save_data(file_name, data):
 
 
 def find_solution(M, N, pizza_types):
-	return [0]
+	total_slices = 0
+	solution = []
+	solution_found = False
+	for i in range(0, N): # add pizza one by one - and count total_slices
+		if solution_found:
+			break
+		current_slices = 0
+		temp_solution = []
+		for j in range(i, -1, -1):
+			temp_slices = current_slices + pizza_types[j]
+			if temp_slices == M:
+				current_slices = temp_slices
+				temp_solution.insert(0, j)
+				solution_found = True
+				break
+			elif temp_slices > M:
+				continue
+			elif temp_slices < M:
+				current_slices = temp_slices
+				temp_solution.insert(0, j)
+				continue
+		if total_slices < current_slices:
+			total_slices = current_slices
+			solution = temp_solution
+	return solution
 
 
 def process_file(file_name):
@@ -23,6 +47,7 @@ def process_file(file_name):
 	pizza_types_to_order = ' '.join(str(i) for i in solution) # which pizzas to order
 	output_solution = f"{K}\n{pizza_types_to_order}"
 	save_data(file_name, output_solution)
+
 
 if __name__ == "__main__":
 	files = ["a_example.in", "b_small.in", "c_medium.in", "d_quite_big.in", "e_also_big.in"]
